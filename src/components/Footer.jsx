@@ -78,14 +78,14 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="grid grid-cols-1 gap-8">
+            <div className="space-y-8">
               {/* Legal */}
               <div>
                 <h4 className="text-slate-900 font-black mb-8 font-serif uppercase tracking-widest text-sm">Legal</h4>
                 <ul className="space-y-4 font-bold">
-                  <li><button onClick={() => setIsPrivacyModalOpen(true)} className="text-slate-500 hover:text-accent-blue transition-colors text-base block text-left w-full">Privacy Policy</button></li>
-                  <li><button onClick={() => setIsTermsModalOpen(true)} className="text-slate-500 hover:text-accent-blue transition-colors text-base block text-left w-full">Terms of Service</button></li>
-                  <li><button onClick={() => setIsCookieModalOpen(true)} className="text-slate-500 hover:text-accent-blue transition-colors text-base block text-left w-full">Cookie Policy</button></li>
+                  <li><button onClick={() => setIsPrivacyModalOpen(true)} className="text-slate-500 hover:text-accent-blue transition-colors text-base block w-full text-center lg:text-left">Privacy Policy</button></li>
+                  <li><button onClick={() => setIsTermsModalOpen(true)} className="text-slate-500 hover:text-accent-blue transition-colors text-base block w-full text-center lg:text-left">Terms of Service</button></li>
+                  <li><button onClick={() => setIsCookieModalOpen(true)} className="text-slate-500 hover:text-accent-blue transition-colors text-base block w-full text-center lg:text-left">Cookie Policy</button></li>
                 </ul>
               </div>
 
