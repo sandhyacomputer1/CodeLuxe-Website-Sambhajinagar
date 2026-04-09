@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ffffff;
+  /* White background */
+  --color-secondary: #f8fafc;
+  /* Light slate for cards */
+  --color-accent-blue: #2563eb;
+  /* Professional blue */
+  --color-accent-gold: #d97706;
+  /* Professional amber/gold */
+
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-slate-800 antialiased selection:bg-accent-blue/10 selection:text-accent-blue;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    @apply text-slate-900;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-blue-700;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-slate-200 shadow-sm;
+  }
+
+  .glow-effect {
+    box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+  }
+
+  .glow-effect-hover:hover {
+    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.3);
+  }
+
+  .animated-border-card {
+    @apply relative overflow-hidden p-[4px];
+    /* Pronounced border thickness */
+    background: #f8fafc;
+  }
+
+  .animated-border-card::before {
+    content: "";
+    @apply absolute -inset-[200%] animate-[rotate-border_4s_linear_infinite];
+    background: conic-gradient(transparent,
+        #2563eb 5%,
+        /* Vibrant Blue-600 */
+        #1e40af 15%,
+        /* Deep Blue-800 for core power */
+        #2563eb 25%,
+        transparent 40%);
+    filter: blur(10px);
+    /* Balanced glow visibility */
+    z-index: 0;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-line-clamp: 3;
+    -moz-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-4 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-line-clamp: 4;
+    -moz-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @keyframes rotate-border {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
