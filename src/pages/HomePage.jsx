@@ -6,7 +6,7 @@ import Services from '../components/Services';
 import Leaders from '../components/Leaders';
 import Portfolio from '../components/Portfolio';
 import WhyChooseUs from '../components/WhyChooseUs';
-import Contact from '../components/Contact';
+import Process from '../components/Process';
 import Footer from '../components/Footer';
 import DemoModal from '../components/DemoModal';
 
@@ -27,11 +27,11 @@ const HomePage = () => {
       <main>
         <Hero />
         <About />
+        <WhyChooseUs />
         <Leaders />
+        <Process />
         <Services />
         <Portfolio />
-        {/* <WhyChooseUs /> */}
-        {/* <Contact /> */}
       </main>
       <Footer />
       <DemoModal isOpen={isDemoModalOpen} onClose={closeDemoModal} />

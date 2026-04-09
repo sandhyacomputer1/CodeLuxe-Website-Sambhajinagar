@@ -33,7 +33,15 @@ const Navbar = ({ onBookDemoClick }) => {
       <div className="w-full h-full px-4 sm:px-6 flex items-center justify-between">
 
         {/* Compact Branding Area */}
-        <Link to="/" className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-all group h-full">
+        <Link 
+          to="/" 
+          onClick={() => {
+            setIsMobileMenuOpen(false);
+            // Force page refresh to home
+            window.location.href = '/';
+          }}
+          className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-all group h-full"
+        >
           <div className="relative h-[65%] flex items-center">
             <img
               src={logoImg}

@@ -63,7 +63,7 @@ const WhyChooseUs = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-10 rounded-[2.5rem] border border-slate-100 hover:border-accent-blue/30 transition-all duration-500 shadow-sm hover:shadow-2xl group"
+                className="bg-white p-10 rounded-lg border border-slate-100 hover:border-accent-blue/30 transition-all duration-500 shadow-sm hover:shadow-2xl group"
               >
                 <div className="w-16 h-16 bg-accent-blue rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-100 group-hover:scale-110 transition-transform duration-500">
                   {reason.icon}

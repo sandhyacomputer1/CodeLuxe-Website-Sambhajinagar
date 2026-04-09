@@ -38,9 +38,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[91px] font-black tracking-tight mb-8 leading-none text-slate-900 whitespace-nowrap overflow-visible"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[91px] font-black tracking-tight mb-8 leading-none text-slate-900"
         >
-          Building <span className="text-blue-500">Premium</span> Digital Solutions
+          Building <span className="text-blue-500">Premium</span> <br className="sm:hidden" />Digital Solutions
         </motion.h1>
 
         <motion.div
