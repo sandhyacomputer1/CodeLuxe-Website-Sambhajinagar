@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://codeluxetechnologies.vercel.app/sitemap.xml
+
+# Crawl-delay (optional, if needed)
+# Crawl-delay: 1
+
+# Disallow specific paths if any (currently allowing all)
+# Disallow: /private/
+# Disallow: /admin/

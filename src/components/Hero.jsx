@@ -5,7 +5,7 @@ import bgVideo from '../assets/BGvideo.mp4';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-24 pb-16">
+    <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-24 pb-16" role="banner">
 
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
@@ -98,7 +98,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-    </section>
+    </header>
   );
 };
 

@@ -4,11 +4,13 @@ import HomePage from './pages/HomePage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
 import ScrollToTop from './components/ScrollToTop';
+import SmoothScroll from './components/SmoothScroll';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <SmoothScroll />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/careers" element={<CareersPage />} />

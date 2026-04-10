@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import ProductModal from './ProductModal';
 
 import hospitalImg from '../assets/hodpitalmanagment.png';
 import schoolImg from '../assets/smartschool.png';
@@ -269,20 +268,8 @@ const products = [
 
 const Portfolio = () => {
   const [showAll, setShowAll] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const displayedProducts = showAll ? products : products.slice(0, 6);
-
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProduct(null);
-  };
 
   return (
     <>
@@ -304,8 +291,7 @@ const Portfolio = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group cursor-pointer"
-                onClick={() => handleProductClick(product)}
+                className="group"
               >
                 <div className="relative overflow-hidden rounded-[2rem] mb-6 aspect-[16/10] shadow-md group-hover:shadow-xl transition-all duration-700 bg-slate-50 flex items-center justify-center p-8">
                   <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
@@ -349,13 +335,6 @@ const Portfolio = () => {
 
         </div>
       </section>
-
-      {/* Product Modal */}
-      <ProductModal 
-        product={selectedProduct}
-        isOpen={isModalOpen}
-        onClose={closeModal}
-      />
     </>
   );
 };
