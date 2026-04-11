@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Process from './components/Process';
 import Portfolio from './components/Portfolio';
 import WhyChooseUs from './components/WhyChooseUs';
+import Leaders from './components/Leaders';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CareersPage from './pages/CareersPage';
@@ -37,6 +38,7 @@ function App() {
               <Process />
               <Portfolio />
               <WhyChooseUs />
+              <Leaders />
             </main>
             <Footer />
           </div>
