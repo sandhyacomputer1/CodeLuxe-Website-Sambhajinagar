@@ -26,7 +26,7 @@ const experienceLevels = [
   "Lead (6+ years)"
 ];
 
-const CareersPage = () => {
+const CareersPage = ({ onBookDemoClick }) => {
   const [applicationForm, setApplicationForm] = useState({
     name: '',
     email: '',
@@ -57,7 +57,7 @@ const CareersPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <Navbar onBookDemoClick={onBookDemoClick} />
 
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50">

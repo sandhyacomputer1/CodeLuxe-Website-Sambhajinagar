@@ -63,7 +63,8 @@ const Footer = () => {
               <li><a href="#about" className="text-slate-500 hover:text-accent-blue transition-all text-base block">About Us</a></li>
               <li><a href="#services" className="text-slate-500 hover:text-accent-blue transition-all text-base block">Services</a></li>
               <li><a href="#projects" className="text-slate-500 hover:text-accent-blue transition-all text-base block">Portfolio</a></li>
-              <li><a href="#careers" className="text-slate-500 hover:text-accent-blue transition-all text-base block">Careers</a></li>
+              <li><a href="/careers" className="text-slate-500 hover:text-accent-blue transition-all text-base block">Careers</a></li>
+              <li><a href="/contact" className="text-slate-500 hover:text-accent-blue transition-all text-base block">Contact</a></li>
             </ul>
           </div>
 

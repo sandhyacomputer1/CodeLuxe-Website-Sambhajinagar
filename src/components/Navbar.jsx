@@ -33,8 +33,8 @@ const Navbar = ({ onBookDemoClick }) => {
       <div className="w-full h-full px-4 sm:px-6 flex items-center justify-between">
 
         {/* Compact Branding Area */}
-        <Link 
-          to="/" 
+        <a 
+          href="/" 
           onClick={() => {
             setIsMobileMenuOpen(false);
             // Force page refresh to home
@@ -57,27 +57,33 @@ const Navbar = ({ onBookDemoClick }) => {
               TECHNOLOGIES
             </span>
           </div>
-        </Link>
+        </a>
 
         {/* Desktop Nav - Increased size by 3px (text-[15px]) */}
         <nav className="hidden xl:flex space-x-10 items-center h-full">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className="text-slate-950 hover:text-accent-blue transition-all text-[15px] font-black uppercase tracking-[0.2em] relative py-1 group"
-            >
-              {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-blue transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isPageRoute = link.href === '/careers' || link.href === '/contact';
+            const Component = isPageRoute ? Link : 'a';
+            const props = isPageRoute ? { to: link.href } : { href: link.href };
+            
+            return (
+              <Component
+                key={link.name}
+                {...props}
+                className="text-slate-950 hover:text-accent-blue transition-all text-[15px] font-black uppercase tracking-[0.2em] relative py-1 group cursor-pointer"
+              >
+                {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-blue transition-all duration-300 group-hover:w-full"></span>
+              </Component>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA - Refined size */}
         <div className="hidden lg:flex items-center h-full">
           <button
             onClick={onBookDemoClick}
-            className="px-8 py-2.5 rounded-full bg-accent-blue text-white font-black shadow-lg shadow-blue-100 hover:shadow-blue-200 transition-all hover:scale-105 active:scale-95 inline-block text-[12px] uppercase tracking-widest"
+            className="px-8 py-2.5 rounded-full bg-accent-blue text-white font-black shadow-lg shadow-blue-100 hover:shadow-blue-200 transition-all hover:scale-105 active:scale-95 inline-block text-[12px] uppercase tracking-widest cursor-pointer"
           >
             BOOK A DEMO
           </button>
@@ -111,22 +117,28 @@ const Navbar = ({ onBookDemoClick }) => {
             </button>
 
             <div className="flex flex-col space-y-6 text-center uppercase tracking-[0.3em] font-black">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-900 hover:text-accent-blue transition-colors text-lg"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isPageRoute = link.href === '/careers' || link.href === '/contact';
+                const Component = isPageRoute ? Link : 'a';
+                const props = isPageRoute ? { to: link.href } : { href: link.href };
+                
+                return (
+                  <Component
+                    key={link.name}
+                    {...props}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-slate-900 hover:text-accent-blue transition-colors text-lg cursor-pointer"
+                  >
+                    {link.name}
+                  </Component>
+                );
+              })}
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onBookDemoClick();
                 }}
-                className="px-10 py-4 rounded-full bg-accent-blue text-white text-base"
+                className="px-10 py-4 rounded-full bg-accent-blue text-white text-base cursor-pointer"
               >
                 BOOK DEMO
               </button>

@@ -1,21 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import Process from './components/Process';
+import Portfolio from './components/Portfolio';
+import WhyChooseUs from './components/WhyChooseUs';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
-import ScrollToTop from './components/ScrollToTop';
-import SmoothScroll from './components/SmoothScroll';
+import BookDemoModal from './components/BookDemoModal';
 
 function App() {
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+
+  const handleBookDemoClick = () => {
+    setIsBookDemoOpen(true);
+  };
+
+  const handleCloseBookDemo = () => {
+    setIsBookDemoOpen(false);
+  };
+
   return (
     <Router>
-      <ScrollToTop />
-      <SmoothScroll />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/careers" element={<CareersPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/" element={
+          <div className="relative w-full min-h-screen font-sans">
+            <Navbar onBookDemoClick={handleBookDemoClick} />
+            <main>
+              <Hero />
+              <About />
+              <Services />
+              <Process />
+              <Portfolio />
+              <WhyChooseUs />
+            </main>
+            <Footer />
+          </div>
+        } />
+        <Route path="/careers" element={<CareersPage onBookDemoClick={handleBookDemoClick} />} />
+        <Route path="/contact" element={<ContactPage onBookDemoClick={handleBookDemoClick} />} />
       </Routes>
+      <BookDemoModal isOpen={isBookDemoOpen} onClose={handleCloseBookDemo} />
     </Router>
   );
 }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const ContactPage = () => {
+const ContactPage = ({ onBookDemoClick }) => {
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -78,7 +78,7 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <Navbar onBookDemoClick={onBookDemoClick} />
 
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50">

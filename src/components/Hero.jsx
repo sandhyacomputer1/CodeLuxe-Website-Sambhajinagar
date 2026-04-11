@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 import bgVideo from '../assets/BGvideo.mp4';
+import BrochureDownload from './BrochureDownload';
 
 const Hero = () => {
   return (
@@ -71,20 +72,17 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 w-full justify-center items-center mt-12"
         >
-          <a
-            href="#contact"
-            className="group relative flex items-center justify-center px-10 py-3.5 text-sm md:text-base rounded-full bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 hover:-translate-y-1 hover:scale-105 transition-all w-full sm:w-auto active:scale-95 uppercase tracking-widest overflow-hidden"
-          >
-            GET STARTED
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
-          </a>
-
-          <a
+          <motion.a
             href="#projects"
-            className="group flex items-center justify-center px-10 py-3.5 text-sm md:text-base rounded-full bg-white text-slate-800 border-2 border-slate-200 font-bold hover:border-blue-600 hover:text-blue-600 hover:-translate-y-1 hover:scale-105 transition-all w-full sm:w-auto uppercase tracking-widest shadow-md hover:shadow-xl"
+            whileHover={{ scale: 1.05, y: -1 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+            className="group flex items-center justify-center px-10 py-3.5 text-sm md:text-base rounded-full bg-white text-slate-800 border-2 border-slate-200 font-bold hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 w-full sm:w-auto uppercase tracking-widest shadow-md hover:shadow-xl"
           >
             VIEW PROJECTS
-          </a>
+          </motion.a>
+
+          <BrochureDownload />
         </motion.div>
 
         {/* Scroll Indicator */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import ProductModal from './ProductModal';
 
 import hospitalImg from '../assets/hodpitalmanagment.png';
 import schoolImg from '../assets/smartschool.png';
@@ -268,8 +269,24 @@ const products = [
 
 const Portfolio = () => {
   const [showAll, setShowAll] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const displayedProducts = showAll ? products : products.slice(0, 6);
+
+  const handleProductClick = (product) => {
+    console.log('Product clicked:', product);
+    console.log('Setting selected product:', product);
+    console.log('Opening modal...');
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+    console.log('Modal should be open now');
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
 
   return (
     <>
@@ -291,7 +308,8 @@ const Portfolio = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group"
+                className="group cursor-pointer"
+                onClick={() => handleProductClick(product)}
               >
                 <div className="relative overflow-hidden rounded-[2rem] mb-6 aspect-[16/10] shadow-md group-hover:shadow-xl transition-all duration-700 bg-slate-50 flex items-center justify-center p-8">
                   <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
@@ -325,7 +343,7 @@ const Portfolio = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 onClick={() => setShowAll(true)}
-                className="inline-flex items-center px-8 py-4 bg-accent-blue text-white font-black rounded-2xl hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-accent-blue text-white font-black rounded-2xl hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
               >
                 Load More Projects
                 <ArrowUpRight className="ml-2 w-5 h-5" />
@@ -335,6 +353,13 @@ const Portfolio = () => {
 
         </div>
       </section>
+
+      {/* Product Modal */}
+      <ProductModal 
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </>
   );
 };
