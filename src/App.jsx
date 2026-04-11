@@ -34,11 +34,11 @@ function App() {
             <main>
               <Hero />
               <About />
+              <WhyChooseUs />
+              <Leaders />
               <Services />
               <Process />
               <Portfolio />
-              <WhyChooseUs />
-              <Leaders />
             </main>
             <Footer />
           </div>
