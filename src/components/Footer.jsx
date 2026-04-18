@@ -123,10 +123,6 @@ const Footer = () => {
           <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">
             &copy; {new Date().getFullYear()} Code Luxe Technologies. All rights reserved.
           </p>
-          <div className="flex flex-col items-center text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap">
-            <span className="text-slate-400">Designed by</span>
-            <span className="text-accent-blue">Sandhya Softtech Pvt Ltd</span>
-          </div>
         </div>
 
       </div>

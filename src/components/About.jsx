@@ -21,7 +21,7 @@ const About = () => {
               Trusted Franchise, <br /> <span className="text-slate-400">Independent Excellence.</span>
             </h3>
             <p className="text-base md:text-lg text-slate-600 font-medium leading-relaxed">
-              Code Luxe Technologies operates as a trusted franchise of Sandhya SoftTech Pvt Ltd, a well-established IT organization known for delivering reliable and scalable digital solutions. We combine the strength of enterprise-level infrastructure with a modern, innovative approach to provide premium, client-focused services.
+              Code Luxe Technologies operates as a trusted a well-established IT organization known for delivering reliable and scalable digital solutions. We combine the strength of enterprise-level infrastructure with a modern, innovative approach to provide premium, client-focused services.
               <br/><br/>
               As a franchise, we follow proven systems and industry best practices while maintaining our own identity—focused on delivering high-quality, performance-driven, and user-centric solutions.
               <br/><br/>
@@ -67,7 +67,7 @@ const About = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {[
-            { icon: <ShieldCheck className="w-6 h-6" />, title: "Trust & Reliability", desc: "Backed by enterprise-level processes and the foundation of Sandhya SoftTech Pvt Ltd, we ensure secure, stable, and dependable solutions." },
+            { icon: <ShieldCheck className="w-6 h-6" />, title: "Trust & Reliability", desc: "Backed by enterprise-level processes and the foundation of , we ensure secure, stable, and dependable solutions." },
             { icon: <Target className="w-6 h-6" />, title: "Visionary Innovation", desc: "We continuously adopt the latest technologies and modern frameworks to deliver high-performance applications." },
             { icon: <Trophy className="w-6 h-6" />, title: "Elite Expertise", desc: "Our skilled developers and creative designers bring deep technical knowledge and a passion for building premium digital experiences." }
           ].map((item, idx) => (

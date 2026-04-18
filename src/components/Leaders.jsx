@@ -12,7 +12,7 @@ const leadersList = [
   },
   {
     image: directorImage,
-    name: "Swati Bedge",
+    name: "Swati Patil",
     title: "Director & CTO",
     description: "Technical expert with a passion for cutting-edge solutions and architectural excellence in software development."
   }
